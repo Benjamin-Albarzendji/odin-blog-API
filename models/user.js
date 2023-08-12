@@ -8,6 +8,7 @@ const UserSchema = new Schema({
   username: { type: String, required: false, maxLength: 100 },
   password: { type: String, required: false },
   salt: { type: String, required: false },
+  posts: [{ type: Schema.Types.ObjectId, ref: 'Post' }],
 });
 
 // Virtual for user's URL
