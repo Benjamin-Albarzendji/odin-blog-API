@@ -1,35 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import * as React from 'react';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import CssBaseline from '@mui/material/CssBaseline';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [posts, setPosts] = useState([]);
+
+  console.log('hello');
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // const response = await fetch('http://localhost:3000/');
+      // const data = await response.json();
+      // setPosts(data);
+    };
+
+    fetchData();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <React.Fragment>
+      <CssBaseline />
+      <BrowserRouter>
+        <Navbar></Navbar>
+
+        <Routes>
+          <Route path="/f" element={<h1>Home</h1>} />
+          <Route path="/create-post" element={<h1>Create Post</h1>} />
+          <Route path="/check-posts" element={<h1>Check Posts</h1>} />
+        </Routes>
+      </BrowserRouter>
+    </React.Fragment>
+  );
 }
 
-export default App
+export default App;
