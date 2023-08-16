@@ -129,7 +129,6 @@ exports.create_post_post = [
 // All posts page GET
 exports.posts_get = asyncHandler(async (req, res, next) => {
   const allPosts = await Post.find({})
-    .lean()
     .populate('author', 'first_name family_name')
     .exec();
 
@@ -142,7 +141,6 @@ exports.posts_get = asyncHandler(async (req, res, next) => {
 // Specific post page GET
 exports.post_get = asyncHandler(async (req, res, next) => {
   const post = await Post.findById(req.params.id)
-    .lean()
     .populate('author', 'first_name family_name')
     .exec();
 
