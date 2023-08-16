@@ -32,22 +32,36 @@ export default function ButtonAppBar() {
 
               <Button color="inherit">
                 {' '}
-                <Link sx={{ color: 'White' }} href="/create-post">
+                <Link sx={{ color: 'White' }} href="/create_post">
                   Create Post
                 </Link>
               </Button>
               <Button color="inherit">
                 {' '}
-                <Link sx={{ color: 'White' }} href="/check-posts">
+                <Link sx={{ color: 'White' }} href="/check_posts">
                   Check Posts
                 </Link>
               </Button>
             </Box>
             <Box>
-              <Button color="inherit">Logout</Button>
-              <Button color="inherit">Login</Button>
-              <Button color="inherit">Sign-Up</Button>
-              
+              <Button color="inherit">
+                {' '}
+                <Link sx={{ color: 'White' }} href="/logout">
+                  Logout
+                </Link>
+              </Button>
+              <Button color="inherit">
+                {' '}
+                <Link sx={{ color: 'White' }} href="/login">
+                  Login
+                </Link>
+              </Button>
+              <Button color="inherit">
+                {' '}
+                <Link sx={{ color: 'White' }} href="/signup">
+                  Sign-Up
+                </Link>
+              </Button>
             </Box>
           </Box>
         </Toolbar>

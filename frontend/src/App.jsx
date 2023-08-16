@@ -30,7 +30,7 @@ function App() {
         <Navbar></Navbar>
 
         <Routes>
-          <Route path="/f" element={<h1>Home</h1>} />
+          <Route path="/" element={<h1>Home</h1>} />
           <Route path="/create-post" element={<h1>Create Post</h1>} />
           <Route path="/check-posts" element={<h1>Check Posts</h1>} />
         </Routes>
