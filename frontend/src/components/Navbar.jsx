@@ -8,11 +8,13 @@ import Link from '@mui/material/Link';
 
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+    <Box sx={{ flexGrow: 1, width: '100%', marginBottom: 2 }}>
+      <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Odin-Blog
+            <Link sx={{ color: 'white' }} href="/">
+              Odin-Blog
+            </Link>
           </Typography>
 
           <Box

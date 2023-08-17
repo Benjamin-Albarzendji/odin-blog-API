@@ -7,22 +7,9 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import CssBaseline from '@mui/material/CssBaseline';
 import Navbar from './components/Navbar';
+import Home from './components/Home';
 
 function App() {
-  const [posts, setPosts] = useState([]);
-
-  console.log('hello');
-
-  useEffect(() => {
-    const fetchData = async () => {
-      // const response = await fetch('http://localhost:3000/');
-      // const data = await response.json();
-      // setPosts(data);
-    };
-
-    fetchData();
-  }, []);
-
   return (
     <React.Fragment>
       <CssBaseline />
@@ -30,9 +17,12 @@ function App() {
         <Navbar></Navbar>
 
         <Routes>
-          <Route path="/" element={<h1>Home</h1>} />
+          <Route path="/" element={<Home />} />
           <Route path="/create-post" element={<h1>Create Post</h1>} />
           <Route path="/check-posts" element={<h1>Check Posts</h1>} />
+          <Route path="/login" element={<h1>Login</h1>} />
+          <Route path="/logout" element={<h1>Logout</h1>} />
+          <Route path="posts/:id" element={'hello'}></Route>
         </Routes>
       </BrowserRouter>
     </React.Fragment>
